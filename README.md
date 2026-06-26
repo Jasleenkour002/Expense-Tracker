@@ -1,73 +1,87 @@
-# Expense Tracker
+# 💰 Expense Tracker
 
-A full-stack Expense Tracker web application. The backend is built with **Node.js/Express**, and the frontend is built using **Vanilla HTML, CSS, and JavaScript**.
+A lightweight, full-stack Expense Tracker web application. The application features a secure **Node.js & Express** backend coupled with a highly responsive, clean **Vanilla HTML, CSS, and JavaScript** frontend.
 
-## Project Features
-- **User Authentication**: Secure signup and login using hashed passwords (bcrypt) and JSON Web Tokens (JWT).
-- **Expense Management**: Add, view, filter, and delete expenses.
-- **Mock Local Database**: Fast database operation using a local `data.json` storage file (no external MongoDB database installation required).
-- **Clean Responsive Dashboard**: Simple, intuitive user interface for managing your day-to-day budgets.
+![Node.js](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white)
+![Express.js](https://img.shields.io/badge/Express.js-000000?style=for-the-badge&logo=express&logoColor=white)
+![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
+![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
+![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
 
 ---
 
-## Directory Structure
+## ✨ Features
+
+- **🔐 Secure Authentication**: Sign up and log in safely using hashed passwords (via `bcryptjs`) and secure session tracking (via JSON Web Tokens).
+- **📊 Interactive Dashboard**: A clean and responsive dashboard to view, add, and filter your daily expenses.
+- **📁 Mock Local Database**: Uses a local file-based database (`data.json`) for zero-setup execution (no external MongoDB server configuration required).
+- **⚡ Fast and Lightweight**: Minimal resource usage with fast API response times.
+
+---
+
+## 📂 Project Architecture
 
 ```text
 Expense Tracker/
 ├── Expense Tracker/
-│   ├── Backend/            # Express.js backend server
-│   │   ├── src/            # Auth/Expense controllers & database adapter
-│   │   ├── data.json       # Local database storage (automatically generated)
-│   │   ├── server.js       # Entry point for backend
-│   │   └── .env.example    # Template for environment variables
-│   └── Frontend/           # Frontend static pages
-│       ├── css/            # Style sheets
-│       ├── js/             # API client & UI logic
-│       ├── index.html      # Authentication / Login page
-│       └── dashboard.html  # Expense Dashboard page
-└── run_backend.bat         # Batch script to start backend easily on Windows
+│   ├── Backend/            # Express.js backend API
+│   │   ├── src/            # Application logic (Controllers, Models, Routes)
+│   │   ├── data.json       # Local database storage (Auto-generated on launch)
+│   │   ├── server.js       # Express server entry point
+│   │   └── .env.example    # Configuration variables template
+│   └── Frontend/           # Frontend static client files
+│       ├── css/            # Style definitions
+│       ├── js/             # API client services & dashboard render logic
+│       ├── index.html      # Authentication portal (Login/Register)
+│       └── dashboard.html  # Main budget & expense dashboard
+└── run_backend.bat         # Windows launcher script
 ```
 
 ---
 
-## Local Setup Instructions
+## 🚀 Local Installation & Setup
 
-### Prerequisites
-- [Node.js](https://nodejs.org/) installed on your computer.
+Follow these simple steps to run the application on your computer:
 
-### Step 1: Install Dependencies
-Open your terminal inside the `Expense Tracker/Backend` directory and install the necessary npm packages:
+### 1. Prerequisites
+Ensure you have [Node.js](https://nodejs.org/) installed.
+
+### 2. Install Dependencies
+Navigate to the backend directory and install the required npm packages:
 ```bash
 cd "Expense Tracker/Backend"
 npm install
 ```
 
-### Step 2: Configure Environment Variables
-Copy the template `.env.example` file in the `Backend` directory to create a `.env` file:
+### 3. Setup Configuration
+Duplicate the template configuration file:
 ```bash
 cp .env.example .env
 ```
-Inside `.env`, configure the port and secret keys (defaults are pre-configured):
-```env
-PORT=5000
-JWT_SECRET=your_super_secret_key_here
-```
+*(Optionally, open `.env` in any editor to change ports or configure keys.)*
 
-### Step 3: Run the Server
-You can run the server in two ways:
+---
 
-#### Option A: Double-Click the batch script (Windows only)
-Simply double-click the `run_backend.bat` file in the root folder of this project.
+## 💻 Running the Application
 
-#### Option B: Use Terminal Commands
-From the `Expense Tracker/Backend` directory, run:
+Choose **one** of the methods below to start the server:
+
+### Method A: One-Click Startup (Windows)
+Double-click the `run_backend.bat` file in the root of the project.
+
+### Method B: Via Terminal
+From the `Expense Tracker/Backend` folder, run:
 ```bash
 npm start
 ```
-Or for development with automatic restarts:
+For developers, start the app with auto-restart on code change:
 ```bash
 npm run dev
 ```
 
-Once running, open your browser and navigate to:
-**[http://localhost:5000](http://localhost:5000)**
+Once running, navigate to **[http://localhost:5000](http://localhost:5000)** in your web browser.
+
+---
+
+> [!NOTE]
+> When starting the backend for the first time, a new database file (`data.json`) is automatically generated inside the `Backend` directory.
